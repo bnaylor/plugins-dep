@@ -1,0 +1,17 @@
+ndvp-server:
+  image: netappdvp:1.3
+  privileged: true
+  ipc: host
+  net: host
+  tty: true
+  cap_add:
+    - SYS_ADMIN
+  volumes:
+    - /:/host:shared 
+    - /var/run:/host/var/run:shared 
+    - /run:/host/run:shared
+    - .:/etc/netappdvp
+#  ports:
+#    - "27609:27609"
+  entrypoint: /netapp/boot.sh -- --in-container=true --config="http://10.193.45.241/dvp_config" --debug
+#  entrypoint: /netapp/boot.sh -i -- --in-container=true --config="http://10.193.45.241/dvp_config" --debug

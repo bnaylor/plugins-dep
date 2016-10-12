@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "[Add real nDVP binary here]"
+echo "Invoked with: $*"
+
