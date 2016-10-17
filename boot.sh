@@ -32,7 +32,7 @@ function check_redhat() {
 }
 
 function check_debian() {
-	[ -e "$host_pfx/etc/debian-release" ]
+	[ -e "$host_pfx/etc/debian_version" ]
 }
 
 function check_osx() {
